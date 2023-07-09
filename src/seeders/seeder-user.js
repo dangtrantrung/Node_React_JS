@@ -13,9 +13,14 @@ module.exports = {
          * }], {});
          */
         return await queryInterface.bulkInsert('Users', [{
-            firstName: 'John',
-            lastName: 'Doe',
-            email: 'example@example.com',
+            email: 'doctor1@gmail.com',
+            password: '1234534', //plain text ssssssssdffgfgg=>hash password store in DB
+            firstName: 'BS A',
+            lastName: 'Dang Tran Trung',
+            address: 'VN',
+            roleId: 'R1',
+            positionId: 'P1',
+            phonenumber: '0123447891',
             createdAt: new Date(),
             updatedAt: new Date()
         }]);

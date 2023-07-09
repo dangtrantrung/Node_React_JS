@@ -2,7 +2,7 @@ const { Sequelize } = require('sequelize');
 
 
 // Option 3: Passing parameters separately (other dialects)
-const sequelize = new Sequelize('hoidan', 'root', null, {
+const sequelize = new Sequelize('nodemysql', 'root', null, {
     host: 'localhost',
     dialect: 'mysql',
     logging: false /* one of 'mysql' | 'postgres' | 'sqlite' | 'mariadb' | 'mssql' | 'db2' | 'snowflake' | 'oracle' */
