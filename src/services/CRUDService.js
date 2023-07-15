@@ -23,7 +23,7 @@ let createNewUser = async(data) => {
                 phonenumber: data.PhoneNumber
             })
             console.log(data)
-            resolve('Ok! Create a New User Success');
+            resolve('Ok! Create a New User Successfull');
 
         } catch (error) {
             reject(error)
@@ -44,7 +44,18 @@ let hashUserPassword = (password) => {
 
     })
 }
+let getAllUser = (password) => {
+    return new Promise(async(resolve, reject) => {
+        try {
+            let users = db.User.findAll({ raw: true })
+            resolve(users);
+        } catch (error) {
+            reject(error)
+        }
+    })
+}
 
 module.exports = {
-    createNewUser: createNewUser
+    createNewUser: createNewUser,
+    getAllUser: getAllUser
 }
