@@ -1,7 +1,7 @@
-let express = require("express");
+import express from "express";
 let bodyParser = require('body-parser');
 let viewEngine = require('./config/viewEngine');
-let initWebRoutes = require('./routes/web');
+import initWebRoutes from './routes/web';
 require('dotenv').config();
 
 // sử dụng phù hợp, thay đổi cài đặt version của driver, mysql2 với version của sequelize,

@@ -12,6 +12,8 @@ let initWebRoutes = (app) => {
         res.send("Hello World NodeJS with Hoi dan IT!!!")
     })
     router.get('/get-crud', homeController.displaygetCRUD);
+    router.get('/edit-crud', homeController.getEditCRUD);
+    router.post('/put-crud', homeController.putCRUDPage);
     return app.use('/', router)
 }
 
