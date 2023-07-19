@@ -14,6 +14,8 @@ let initWebRoutes = (app) => {
     router.get('/get-crud', homeController.displaygetCRUD);
     router.get('/edit-crud', homeController.getEditCRUD);
     router.post('/put-crud', homeController.putCRUDPage);
+    router.get('/delete-crud', homeController.deleteCRUDPage);
+
     return app.use('/', router)
 }
 

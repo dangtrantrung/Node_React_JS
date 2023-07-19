@@ -78,6 +78,20 @@ let putCRUDPage = async(req, res) => {
     });
 
 }
+let deleteCRUDPage = async(req, res) => {
+    // let data = await CRUDService.getAllUser();
+    let id = req.query.id;
+    console.log("deleting user with id: " + id)
+    if (id) {
+        await CRUDService.deleteUserById(id);
+        //return res.send("Updated user Info")
+        return res.send("delete user with id: " + id + " successful");
+    } else {
+        return res.send("user with id: " + id + " not found");
+    }
+
+
+}
 
 module.exports = {
     getHomePage: getHomePage,
@@ -86,5 +100,6 @@ module.exports = {
     postCRUDPage: postCRUDPage,
     displaygetCRUD: displaygetCRUD,
     getEditCRUD: getEditCRUD,
-    putCRUDPage: putCRUDPage
+    putCRUDPage: putCRUDPage,
+    deleteCRUDPage: deleteCRUDPage
 }
