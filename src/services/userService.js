@@ -77,7 +77,28 @@ let compareUserPassword = () => {
         }
     })
 }
+let getAllUsers = (userId) => {
+    return new Promise(async(resolve, reject) => {
+        try {
+            let users = '';
+            if (userId === 'ALL') {
+                users = db.User.findAll();
+            }
+            if (userId && userId !== "ALL") {
+                users = await db.User.findOne({
+                    where: { id: userId },
+                    raw: true
+                })
+            }
+            console.log(users);
+            resolve(users)
+        } catch (error) {
+            reject(error)
+        }
+    })
+}
 
 module.exports = {
-    handeUserLogin: handeUserLogin
+    handeUserLogin: handeUserLogin,
+    getAllUsers: getAllUsers
 }
