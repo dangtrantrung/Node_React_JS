@@ -2,6 +2,7 @@ import express from "express";
 let bodyParser = require('body-parser');
 let viewEngine = require('./config/viewEngine');
 import initWebRoutes from './routes/web';
+import cors from 'cors';
 require('dotenv').config();
 
 // sử dụng phù hợp, thay đổi cài đặt version của driver, mysql2 với version của sequelize,
@@ -15,6 +16,15 @@ dotenv.config(); */
 
 
 let app = express();
+//app.use(cors({ origin: true }))
+const corsOptions = {
+    origin: 'http://localhost:3000',
+    credentials: true, //access-control-allow-credentials:true
+    optionSuccessStatus: 200
+}
+app.use(cors(corsOptions));
+
+
 //config app
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
