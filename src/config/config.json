@@ -7,8 +7,7 @@
         "dialect": "mysql",
         "logging": false,
         "query": {
-            "raw": true,
-            "timezone": "+07:00"
+            "raw": true
         },
         "timezone": "+07:00"
     },

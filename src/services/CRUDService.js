@@ -98,6 +98,7 @@ let updateUserData = (data) => {
     })
 
 }
+
 let deleteUserById = (userId) => {
     console.log('delete user with: ' + userId);
     return new Promise(async(resolve, reject) => {
